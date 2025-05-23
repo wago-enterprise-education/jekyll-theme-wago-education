@@ -43,6 +43,7 @@
     <header>
         <h1>WAGO Ausbildung</h1>
         <nav>
+            <a href="/">Home</a>
             {%- for _entry in site.data.header.navigation -%}
             <a href="{{ _entry.url }}">{{ _entry.title }}</a>
             {%- endfor -%}
