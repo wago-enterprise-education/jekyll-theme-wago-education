@@ -1,1 +1,59 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAGO Ausbildung</title>
+    <style>
+        header {
+            background-color: white;
+            height: 100px;
+            width: 100%;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        header nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #f4f4f4;
+            min-height: calc(100vh - 200px);
+        }
+
+        footer {
+            background-color: white;
+            height: 100px;
+            width: 100%;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WAGO Ausbildung</h1>
+        <nav>
+            {%- for _entry in site.data.header.navigation -%}
+            <a href="{{ _entry.url }}">{{ _entry.title }}</a>
+            {%- endfor -%}
+        </nav>
+    </header>
+    <main>
+        <h2>{{ page.title }}</h2>
+        {{ content }}
+    </main>
+    <footer>
+        <p>&copy; 2025 WAGO GmbH & Co. KG</p>
+    </footer>
+</body>
+</html>
